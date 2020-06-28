@@ -28,16 +28,14 @@ function readLine() {
 *   @return {Number} The second largest number in the array.
 **/
 function getSecondLargest(nums) {
-    // Complete the function
-    let first; first=0;
-    let sec; sec=0;
-    for(let i=0; i<nums.length; i++){
-        if(nums[i]>first){
-        sec=first; first=nums[i];
+    let a=0,b=0;
+    for(let i of nums){
+        if(i>a){
+            b=a; a=i;
         }
-        if(nums[i]>sec && nums[i]<first) sec=nums[i];
+        if(i<a && i>b) b=i;
     }
-    return sec;
+    return b;
 }
 
 
