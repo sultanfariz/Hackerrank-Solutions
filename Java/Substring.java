@@ -11,10 +11,6 @@ public class Solution {
         String S = in.next();
         int start = in.nextInt();
         int end = in.nextInt();
-
-        String[] ar = S.split("");
-        for(int i=start; i<end; i++){
-            System.out.print(ar[i]);
-        }
+        System.out.print(S.substring(start,end));
     }
 }
