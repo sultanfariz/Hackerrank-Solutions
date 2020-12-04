@@ -1,2 +1,2 @@
 #!/bin/sh
-tail -c 20
+tail -n 20
