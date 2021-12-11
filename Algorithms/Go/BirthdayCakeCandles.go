@@ -18,7 +18,16 @@ import (
 
 func birthdayCakeCandles(candles []int32) int32 {
     // Write your code here
-
+    highest, count := candles[0], 0
+    for _, candle := range candles {
+        if highest < candle {
+            count = 1
+            highest = candle
+        } else if highest == candle {
+            count++
+        }
+    }
+    return int32(count)
 }
 
 func main() {
