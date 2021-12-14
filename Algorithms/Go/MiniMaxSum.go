@@ -15,9 +15,18 @@ import (
  * The function accepts INTEGER_ARRAY arr as parameter.
  */
 
-func miniMaxSum(arr []int32) {
+func miniMaxSum(arr []int64) {
     // Write your code here
-
+    var total, highest, lowest int64 = 0, arr[0], arr[0]
+    for _, number := range arr {
+        total += number
+        if number > highest {
+            highest = number
+        } else if number < lowest {
+            lowest = number
+        }
+    }
+    fmt.Printf("%d %d", (total - highest), (total - lowest))
 }
 
 func main() {
@@ -25,12 +34,12 @@ func main() {
 
     arrTemp := strings.Split(strings.TrimSpace(readLine(reader)), " ")
 
-    var arr []int32
+    var arr []int64
 
     for i := 0; i < 5; i++ {
         arrItemTemp, err := strconv.ParseInt(arrTemp[i], 10, 64)
         checkError(err)
-        arrItem := int32(arrItemTemp)
+        arrItem := int64(arrItemTemp)
         arr = append(arr, arrItem)
     }
 
